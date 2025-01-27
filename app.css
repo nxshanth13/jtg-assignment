@@ -1,0 +1,435 @@
+body {
+    margin: 0;
+    font-family: "Rubik";
+}
+
+nav {
+    background-color: #1ac073;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 1200px;
+}
+
+.menu li {
+    font-size: 1rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #f0f0f0;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn {
+    background: #1ac073;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* Landing Page Section */
+#landingpage {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ac073;
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+}
+
+.text-content {
+    max-width: 50%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.search-bar {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ffc107;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #e0a800;
+}
+
+.image-content img {
+    height: 521px;
+    width: 525px;
+}
+
+/* home kitchen */
+.hk_p {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 auto;
+    max-width: 1300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#food-list {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(277px, 1fr));
+    gap: 20px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.food-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 277px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.food-card img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffc107;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.food-details {
+    padding: 10px;
+}
+
+.food-details h3,
+.food-details .price {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.food-details h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.food-details .price {
+    color: #1ac073;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.food-details h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.food-details .price {
+    color: #1ac073;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.meta_rating {
+    background-color: #d7d5dd80;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.meta_time {
+    margin-left: 10px;
+    background-color: #d7d5dd80;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.add-to-cart {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+}
+
+.add-to-cart:hover {
+    background-color: #e0a800;
+}
+
+/* footer */
+.f_nav {
+    background-color: #1ac073;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.f_nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.f_nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.f_nav .menu li {
+    display: inline;
+}
+
+.f_nav .menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.f_nav .menu li a:hover {
+    text-decoration: underline;
+}
+
+.f_nav .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.f_nav .social-icons a {
+    display: inline-block;
+    background-color: white;
+    color: #1ac073;
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f_nav .social-icons a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.divider {
+    border-top: 2px solid white;
+    margin: 0 20px;
+}
+
+.qa_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.form-section {
+    flex: 1;
+    max-width: 600px;
+}
+
+.form-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-section p {
+    color: #6c757d;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form input,
+.form textarea,
+.form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form input {
+    flex: 1;
+    min-width: calc(50% - 10px);
+}
+
+.form textarea {
+    resize: none;
+    height: 100px;
+    min-width: 100%;
+}
+
+.form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 40%;
+}
+
+.form button:hover {
+    background-color: #218838;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

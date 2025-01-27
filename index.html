@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="app.css">
+    <title>JTGeats</title>
+</head>
+
+<body>
+    <section id="navbar">
+        <nav class="frnav">
+            <div class="logo">JTGeats</div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icons">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-bag-shopping" style="color: white; cursor: pointer;" id="cart-icon"></i>
+            </div>
+        </nav>
+    </section>
+
+    <!-- cart popup -->
+    <section id="cart-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <img class="Cart" src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="Cart">
+                <h2>Cart is Empty</h2>
+                <p>Add some items to the cart to checkout</p>
+                <button class="btn" id="back-to-menu">Back to Menu</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="landingpage">
+        <div class="content">
+            <div class="text-content">
+                <p class="title">Authentic Home <br>food in India</p>
+                <p class="subtitle">
+                    JTGeats is a courier service in which authentic home <br>
+                    cook food is delivered to a customer.
+                </p>
+                <div class="search-bar">
+                    <input type="text" name="search" placeholder="Search food you love">
+                    <button>Search</button>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="cuate.png" alt="Cooking illustration">
+            </div>
+        </div>
+    </section>
+
+    <section id="hk">
+        <p class="hk_p">Home Kitchen</p>
+        <div class="container" id="product-container"></div>
+    </section>
+
+    <!-- QA -->
+    <section id="QA">
+        <div class="qa_container">
+            <div class="form-section">
+                <h1>Do you have a question <br>or want to become a seller?</h1>
+                <p>Fill this form and our manager will contact you in the next 48 hours.</p>
+                <form class="form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your e-mail" required>
+                    <textarea placeholder="Your message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="image-section">
+                <img src="image/del.png">
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <nav class="f_nav">
+            <div class="logo">JTGeats</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#facebook">F</a>
+                <a href="#instagram">I</a>
+            </div>
+        </nav>
+        <div class="divider"></div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
