@@ -1,10 +1,23 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: "Rubik";
 }
 
+:root {
+    --main-color: #1ac073;
+}
+
+/* navbar */
 nav {
-    background-color: #1ac073;
+    background-color: var(--main-color);
+    width: 100%;
+    padding: 0;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +37,6 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    max-width: 1200px;
 }
 
 .menu li {
@@ -52,6 +64,7 @@ nav {
     cursor: pointer;
 }
 
+/* cart popup */
 .modal {
     position: fixed;
     top: 0;
@@ -64,6 +77,14 @@ nav {
     align-items: center;
 }
 
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
 .modal-content {
     background: #fff;
     padding: 20px;
@@ -71,6 +92,8 @@ nav {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
+    width: 80%;
+    height: 80vh;
 }
 
 .close {
@@ -131,19 +154,22 @@ nav {
 .search-bar {
     display: flex;
     margin-top: 20px;
+    align-items: center;
 }
 
-.search-bar input {
+.s_input {
     width: 300px;
     height: 40px;
     padding: 10px;
     border: none;
     border-radius: 5px 0 0 5px;
     font-size: 1rem;
+    outline: none;
 }
 
 .search-bar button {
-    padding: 10px 20px;
+    height: 60px;
+    padding: 0 20px;
     border: none;
     border-radius: 0 5px 5px 0;
     background-color: #ffc107;
@@ -151,6 +177,9 @@ nav {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-bar button:hover {
@@ -162,14 +191,36 @@ nav {
     width: 525px;
 }
 
+.image-content img {
+    height: 521px;
+    width: 525px;
+}
+
 /* home kitchen */
 .hk_p {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 600;
     margin: 0 auto;
     max-width: 1300px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffc107;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.image-container {
+    position: relative;
 }
 
 #food-list {
@@ -188,13 +239,12 @@ nav {
     margin-bottom: 50px;
 }
 .food-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 277px;
-    height: 350px;
-    overflow: hidden;
-    position: relative;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 }
 
 .food-card img {
@@ -217,70 +267,91 @@ nav {
 
 .food-details {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.food-details h3,
-.food-details .price {
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle;
+.food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.food-details h3 {
+.food-header h3 {
     font-size: 1rem;
     font-weight: bold;
-}
-
-.food-details .price {
-    color: #1ac073;
-    font-size: 1.2rem;
-    margin-left: 10px;
-}
-
-.food-details h3 {
     margin: 0;
-    font-size: 1rem;
-    font-weight: bold;
 }
 
-.food-details .price {
+.food-header .price {
     color: #1ac073;
-    font-size: 1.2rem;
-    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 .meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
     font-size: 0.8rem;
     color: gray;
 }
 
-.meta_rating {
-    background-color: #d7d5dd80;
-    border-radius: 5px;
-    padding: 2px 5px;
+.meta-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.meta_rating,
 .meta_time {
-    margin-left: 10px;
     background-color: #d7d5dd80;
     border-radius: 5px;
-    padding: 2px;
+    padding: 3px 8px;
+}
+.meta_time {
+    box-shadow:
+        4px 0px 0px 0px #929292,
+        -4px 0px 0px 0px #929292;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffc107;
+    border-radius: 5px;
+    padding: 5px;
+    height: 20px;
+}
+
+.counter button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.counter span {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 10px;
 }
 
 .add-to-cart {
     background-color: #ffc107;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: auto;
 }
 
 .add-to-cart:hover {
@@ -288,18 +359,28 @@ nav {
 }
 
 /* footer */
-.f_nav {
-    background-color: #1ac073;
+#footer {
+    background-color: var(--main-color);
+    padding: 20px 0;
     color: white;
+    height: 60px;
+}
+
+.f_nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .f_nav .logo {
     font-size: 24px;
     font-weight: bold;
+    color: white;
 }
 
 .f_nav .menu {
@@ -310,18 +391,15 @@ nav {
     padding: 0;
 }
 
-.f_nav .menu li {
-    display: inline;
-}
-
 .f_nav .menu li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 .f_nav .menu li a:hover {
-    text-decoration: underline;
+    color: #d4d4d4;
 }
 
 .f_nav .social-icons {
@@ -330,28 +408,27 @@ nav {
 }
 
 .f_nav .social-icons a {
-    display: inline-block;
     background-color: white;
-    color: #1ac073;
-    text-decoration: none;
+    color: #28a745;
+    border-radius: 50%;
     width: 25px;
     height: 25px;
-    border-radius: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.f_nav .social-icons a:hover {
-    background-color: #0056b3;
-    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .divider {
     border-top: 2px solid white;
-    margin: 0 20px;
+    margin-top: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
+/* QA */
 .qa_container {
     display: flex;
     justify-content: space-between;
@@ -359,6 +436,7 @@ nav {
     padding: 50px;
     max-width: 1300px;
     margin: 0 auto;
+    margin-top: 80px;
 }
 
 .form-section {
@@ -408,7 +486,7 @@ nav {
 }
 
 .form button {
-    background-color: #28a745;
+    background-color: #1ac073;
     color: white;
     border: none;
     cursor: pointer;
@@ -432,4 +510,298 @@ nav {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* Video Section */
+.section {
+    height: 800px;
+    background: linear-gradient(to bottom, white 56.99%, #c7eacc 43.01%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+}
+
+.video-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Video Element */
+.video-container video {
+    width: 100%;
+    height: 440px;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Play Button */
+.video-container .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-container .play-button:hover {
+    background-color: #218838;
+}
+
+.video-container .play-button::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent white;
+}
+
+/* popular items */
+#popular {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+#popular * {
+    box-sizing: border-box;
+}
+
+.carousel_wrapper {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.carousel-track-container {
+    max-width: 900px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 277px;
+    height: 380px;
+    margin: 0 10px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+}
+.carousel-item img {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+}
+.carousel-item.active {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1ac073;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 2px solid #1ac073;
+    padding: 10px 12px;
+    z-index: 1000;
+}
+.arrow:hover {
+    background-color: transparent;
+    color: #1ac073;
+    border: 2px solid #1ac073;
+}
+
+.arrow.left {
+    left: -50px;
+}
+.arrow.right {
+    right: -50px;
+}
+
+.request_btn {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Rubik";
+}
+
+.request_btn:hover {
+    background-color: #218838;
+}
+
+.food-main-detail {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* Modal Box */
+#request-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+/* Modal Styling */
+#request-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Modal Content */
+.rq_modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 450px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Input Fields */
+.rq_input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    font-size: 16px;
+    outline: none;
+}
+
+.rq_input:focus {
+    border-color: #28a745;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn,
+.submit-btn {
+    width: 48%;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background: transparent;
+    border: 2px solid #28a745;
+    color: #28a745;
+}
+
+.cancel-btn:hover {
+    background: #28a745;
+    color: white;
+}
+
+.submit-btn {
+    background: #28a745;
+    border: none;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }
